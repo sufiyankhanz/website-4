@@ -23,7 +23,7 @@ code changes, as the containers will pick them up from the host system.
 Operations requiring a rebuild:
 
 - changing dependencies (apt, pip or npm)
-- changing content of public/images, public/lightbox2 or public/robots.txt
+- changing the content of public/images, public/lightbox2 or public/robots.txt
 
 You can stop the containers with::
 
@@ -44,9 +44,9 @@ their website: https://virtualenvwrapper.readthedocs.org/en/latest/
 
 Once the virtualenv is created, you need to make sure that some
 environment variables are exported and are set to valid values, the
-simplest way to achieve that is to edit the postactivate script in
+the simplest way to achieve that is to edit the post activate script in
 `$VIRTUAL_ENV/lutrisweb/bin/postactivate` and add your exports here.
-The only required environment varible is the DJANGO_SETTINGS_MODULE one::
+The only required environment variable is the DJANGO_SETTINGS_MODULE one::
 
     export DJANGO_SETTINGS_MODULE="lutrisweb.settings.local"
 
@@ -58,7 +58,7 @@ dependencies::
 
 To build the frontend assets (javascript and css files), you'll
 need Node and NPM available. If your distribution offers a version of
-Node that is too old, you can use NVM (https://github.com/creationix/nvm)
+The node that is too old, you can use NVM (https://github.com/creationix/nvm)
 to install a more recent version.
 
 You can then build the frontend assets::
@@ -78,7 +78,7 @@ assets, run::
 
     cd frontend/vue
     npm install
-    npm run build:issues  # for a production build
+    npm run build: issues  # for a production build
     npm run build:issues-dev  # for a development build and watch file changes
 
 Once your PostgreSQL database is configured (explained in the paragraph below),
@@ -139,7 +139,7 @@ Create a user::
 
     sudo -u postgres create user lutris
 
-Note that the user will need to be able to create databases in order to
+Note that the user will need to be able to create databases to
 run tests. If you have created an user without this permission, run::
 
     sudo -u postgres psql
@@ -150,16 +150,16 @@ Creating a database::
     sudo -u postgres psql
     create database lutris with owner lutris;
 
-or (in shell)::
+or (in the shell)::
 
     createdb lutris -O lutris
 
-Modify database's owner::
+Modify the database's owner::
 
     sudo -u postgres psql
     alter database lutris owner to lutris;
 
-Change user's password::
+Change the user's password::
 
     sudo -u postgres psql
     alter user lutris with password 'admin';
